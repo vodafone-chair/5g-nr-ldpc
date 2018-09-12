@@ -1,5 +1,5 @@
 # 5g-nr-ldpc
-This library implements a basic version of the 5G NR LDPC code as specified in [TS38.212](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3214). The decoding algorihm is based on [1].
+This library implements a basic version of the 5G NR LDPC code as specified in [TS38.212](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3214). The decoder implements the sum-product algorithm and is based on [1].
 
 ## Quick start
 The file [`ldpcExample.m`](https://github.com/vodafone-chair/5g-nr-ldpc/blob/master/ldpcExample.m) provides a minimal working example of encoding and decoding.
