@@ -9,7 +9,7 @@ assert(length(bitVec)==LDPC.numInfBits, 'Error: The given input vector has lengt
 encVec = mod(bitVec * LDPC.G, 2); % Note: This is very inefficient.
 
 % Puncturing of 2*Z first systematic bits
-encVec = encVec(2*LDPC.Z+1:end);
+encVec = encVec(:,2*LDPC.Z+1:end);
 
 end
 
