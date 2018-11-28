@@ -11,7 +11,7 @@ end
 M = 4;
 
 % LDPC config
-blkSize = 1024;
+blkSize = 8192;
 codeRate = 5/6;
 
 % Get LDPC struct

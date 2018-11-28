@@ -3,7 +3,7 @@ function [ encVec ] = ldpcEncode( bitVec, LDPC )
 % struct 'LDPC'.
 
 % Check if input has correct size
-assert(length(bitVec)==LDPC.numInfBits, 'Error: The given input vector has length %d, correct input length is %d!', length(bitVec), LDPC.numInfBits)
+assert(size(bitVec,2)==LDPC.numInfBits, 'Error: The given input vector has length %d, correct input length is %d!', length(bitVec), LDPC.numInfBits)
 
 % Encode 
 encVec = mod(bitVec * LDPC.G, 2); % Note: This is very inefficient.

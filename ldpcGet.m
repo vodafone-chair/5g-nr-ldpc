@@ -19,6 +19,8 @@ if codeRate < 1/3 + eps
                 ldpc_file = 'LDPC_BG1_32_1_3.mat';
             case 4096
                 ldpc_file = 'LDPC_BG1_64_1_3.mat';
+            case 8192
+                ldpc_file = 'LDPC_BG1_128_1_3.mat';
             otherwise
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
@@ -36,6 +38,8 @@ elseif codeRate < 1/2 + eps
                 ldpc_file = 'LDPC_BG1_48_1_2.mat';
             case 4096
                 ldpc_file = 'LDPC_BG1_96_1_2.mat';
+            case 8192
+                ldpc_file = 'LDPC_BG1_192_1_2.mat';
             otherwise
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
@@ -53,6 +57,8 @@ elseif codeRate < 2/3 + eps
                 ldpc_file = 'LDPC_BG1_64_2_3.mat';
             case 4096
                 ldpc_file = 'LDPC_BG1_128_2_3.mat';
+            case 8192
+                ldpc_file = 'LDPC_BG1_256_2_3.mat';
             otherwise
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
@@ -70,6 +76,8 @@ elseif codeRate < 3/4 + eps
                 ldpc_file = 'LDPC_BG1_72_3_4.mat';
             case 4096
                 ldpc_file = 'LDPC_BG1_144_3_4.mat';
+            case 8192
+                ldpc_file = 'LDPC_BG1_288_3_4.mat';
             otherwise
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
@@ -87,6 +95,8 @@ elseif codeRate < 5/6 + eps
                 ldpc_file = 'LDPC_BG1_80_5_6.mat';
             case 4096
                 ldpc_file = 'LDPC_BG1_160_5_6.mat';
+            case 8192
+                ldpc_file = 'LDPC_BG1_320_5_6.mat';
             otherwise
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end

@@ -16,6 +16,7 @@ if bgType == 1
         error('Error: The specified code rate %f is not supported! For BG1 the code rate should be in the range [1/3,5/6]', rateIn);
     end
 else
+    % Note: BG2 is not yet supported!
     error('Error: bgType must be 1 or 2!');
 end
 LDPC.rate = rateIn;
@@ -102,17 +103,11 @@ for curRow = 1:numRows
 end
 
 %% Generate parity check matrix P
-% NEW
 Hgf = gf(LDPC.H);
 H1 = Hgf(:,1:LDPC.numInfBits);
 H2 = Hgf(:,LDPC.numInfBits+1:end);
 Pgf = (H2\(-H1))';  % This takes a seriously long time for large matrices!
 LDPC.P = double(Pgf.x);
-% OLD
-% H1 = LDPC.H(:,1:LDPC.numInfBits);
-% H2 = LDPC.H(:,LDPC.numInfBits+1:end);    
-% LDPC.P = (H2\(-H1))';  % This takes a seriously long time for large matrices!
-% LDPC.P2 = (inv(H2)*(-H1))';
 
 %% Generate generator matrix G
 LDPC.G = [eye(LDPC.numInfBits), LDPC.P];
