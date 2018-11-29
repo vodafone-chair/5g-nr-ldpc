@@ -2,11 +2,13 @@ function [ LDPC ] = ldpcGet( blkSize, codeRate, iterations, decType )
 %LDPCGET Simple LDPC interface which returns a struct 'LDPC' for the 
 % specified LDPC code. More advanced options can be specified using the 
 % ldpcGetAdvanced(...) function.
-% This implementation supports code rates of r=[1/3, 1/2, 2/3, 3/4, 5/6]
-% and block sizes of ~[256, 512, 1024, 2048, 4096].
+% This implementation supports code rates of R=[1/3, 1/2, 2/3, 3/4, 5/6]
+% and block sizes of N~[256, 512, 1024, 2048, 4096, 8192].
 
 %% Find code rate block size configuration!
-if codeRate < 1/3 + eps
+myEps = 0.05;
+
+if codeRate < 1/3 + myEps
         
         switch blkSize
             case 256
@@ -25,7 +27,7 @@ if codeRate < 1/3 + eps
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
         
-elseif codeRate < 1/2 + eps
+elseif codeRate < 1/2 + myEps
         
         switch blkSize
             case 256
@@ -44,7 +46,7 @@ elseif codeRate < 1/2 + eps
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
         
-elseif codeRate < 2/3 + eps
+elseif codeRate < 2/3 + myEps
         
         switch blkSize
             case 256
@@ -63,7 +65,7 @@ elseif codeRate < 2/3 + eps
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
         
-elseif codeRate < 3/4 + eps
+elseif codeRate < 3/4 + myEps
         
         switch blkSize
             case 256
@@ -82,7 +84,7 @@ elseif codeRate < 3/4 + eps
                 error('Error: The specified blockSize %d is not supported!', blkSize);
         end
         
-elseif codeRate < 5/6 + eps
+elseif codeRate < 5/6 + myEps
         
         switch blkSize
             case 256
